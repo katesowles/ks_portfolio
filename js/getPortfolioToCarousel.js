@@ -59,7 +59,7 @@ $(".carousel-inner").find(function() {
     $(".active:gt(1)").removeClass("active");
 });
 
-// // adds a bubble nav dot for each project in the carousel
+// adds a bubble nav dot for each project in the carousel
 $(".carousel-inner").find(function() {
     rawData.forEach(function(b) {
         $("ol").append('<li data-target="#myCarousel" data-slide-to="' + (b - 1) + '"></li>');

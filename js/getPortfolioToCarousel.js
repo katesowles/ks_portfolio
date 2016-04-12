@@ -1,6 +1,4 @@
-// TODO remove the active class from all but the first project (stacked!)
-// TODO add a li in the ol for each slide so that we have the bubble nav
-// TODO remove the template from showing in the carousel
+// TODO fix the bubbles not being clickable, b-1 == NaN
 
 var projects = [];
 
@@ -56,9 +54,21 @@ rawData.forEach(function(ele) {
     projects.push(new Project(ele));
 });
 
-//
+// removes the active status from all but the first project slide
 $(".carousel-inner").find(function() {
     $(".active:gt(1)").removeClass("active");
+});
+
+// // adds a bubble nav dot for each project in the carousel
+$(".carousel-inner").find(function() {
+    rawData.forEach(function(b) {
+        $("ol").append('<li data-target="#myCarousel" data-slide-to="' + (b - 1) + '"></li>');
+    });
+});
+
+// removed the last, unused bubble nav bubble
+$(".carousel-inner").find(function() {
+    $("li:last-child").remove();
 });
 
 // pushes each project to the carousel

@@ -1,3 +1,7 @@
+// TODO remove the active class from all but the first project (stacked!)
+// TODO add a li in the ol for each slide so that we have the bubble nav
+// TODO remove the template from showing in the carousel
+
 var projects = [];
 
 function Project (projectIndex) {
@@ -35,10 +39,9 @@ Project.prototype.toHtml = function() {
 
     $newProject.find("time").html("about" + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + " days ago");
 
-    // $newProject.append("<hr>");
-    // $newProject.find("hr").css("clear", "both");
-
     $newProject.removeClass("template");
+
+    $newProject.addClass("active");
 
     return $newProject;
 };
@@ -53,7 +56,12 @@ rawData.forEach(function(ele) {
     projects.push(new Project(ele));
 });
 
-// pushes each
+//
+$(".carousel-inner").find(function() {
+    $(".active:gt(1)").removeClass("active");
+});
+
+// pushes each project to the carousel
 projects.forEach(function(a){
     $(".carousel-inner").append(a.toHtml());
 });

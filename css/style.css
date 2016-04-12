@@ -75,7 +75,7 @@ section:first-child {
     padding: 0;
 }
 
-.template, .draft {
+.template, .draft, .hide {
   display: none;
 }
 

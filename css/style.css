@@ -14,6 +14,7 @@ header {
     background-color: rgba(255,255,255,0.8);
     position: fixed !important; /* overriding bootstrap */
     top: 0;
+    z-index: 100;
 }
 
 #logo, a #logo:link, a #logo:visited {
@@ -79,11 +80,12 @@ footer {
 }
 
 #myCarousel {
-    z-index: -50;
+    z-index: 0;
 }
 
 .carousel-control.left, .carousel-control.right {
     background: none;
+    z-index: 1000;
 }
 
 .carousel-caption {

@@ -6,7 +6,7 @@
 }
 
 body {
-    margin-top: 110px;
+    margin-top: 150px;
 }
 
 header {
@@ -67,11 +67,27 @@ section {
     padding: 25px;
 }
 
-section:first-child {
+/*section:first-child {
     margin-top: 200px;
+}*/
+
+#myCarousel {
+    padding: 0;
 }
 
-.template, .draft {
+.carousel-control.left, .carousel-control.right {
+    background: none;
+}
+
+.carousel-caption {
+    position: relative;
+    top: -20px;
+    left: 0;
+    text-shadow: none;
+    color: #999;
+}
+
+.template, .draft, .hide {
   display: none;
 }
 

@@ -30,12 +30,35 @@
             </nav>
         </header>
 
-        <section id="projects">
-            <article class="template" data-category="">
-                <img src="" alt="" class="" />
-                <a href="" class="caption"><h1></h1></a>
-                <p class="description"></p>
-            </article>
+        <!-- start of template -->
+        <div class="item template">
+            <img src="" alt="">
+            <div class="container">
+                <div class="carousel-caption">
+                    <a href=""><h3></h3></a>
+                </div>
+            </div>
+        </div>
+        <!-- end of template -->
+
+        <section id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- dot indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            </ol>
+            <!-- carousel contents -->
+            <div class="carousel-inner" role="listbox">
+                <!-- projects will be inserted here -->
+            </div>
+            <!-- forward/back buttons -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </section>
 
         <section id="about">
@@ -63,6 +86,7 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/portfolioItems.js"></script>
         <script src="js/getPortfolio.js"></script>
+        <script src="js/getPortfolioToCarousel.js"></script>
         <script src="js/app.js"></script>
 
     </body>

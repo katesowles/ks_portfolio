@@ -6,7 +6,7 @@
 }
 
 body {
-    margin-top: 80px;
+    margin-top: 120px;
 }
 
 header {
@@ -14,6 +14,7 @@ header {
     background-color: rgba(255,255,255,0.8);
     position: fixed !important; /* overriding bootstrap */
     top: 0;
+    z-index: 100;
 }
 
 #logo, a #logo:link, a #logo:visited {
@@ -67,7 +68,7 @@ nav a:last-child, footer a:last-child {
 }
 
 section, footer {
-    padding: 0 20px 20px 20px;
+    padding: 0 50px 20px 50px;
 }
 
 footer {
@@ -79,11 +80,12 @@ footer {
 }
 
 #myCarousel {
-    z-index: -50;
+    z-index: 0;
 }
 
 .carousel-control.left, .carousel-control.right {
     background: none;
+    z-index: 1000;
 }
 
 .carousel-caption {
@@ -92,6 +94,14 @@ footer {
     left: 0;
     text-shadow: none;
     color: #999;
+}
+
+.carousel-indicators {
+    display: none;
+}
+
+.container {
+    height: 200px;
 }
 
 .template, .draft, .hide {

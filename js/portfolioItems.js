@@ -19,7 +19,7 @@ var rawData = [
         title:          "Katiebee",
         category:       "Website",
         clientUrl:      "#",
-        imageSrc:       "img/katiebee.png",
+        imageSrc:       "img/katiebeee.png",
         description:    "<strong><p>Role</p></strong><p>Designer</p><p>Web Developer</p>",
         publishedOn:    "2013-11-01"
     },

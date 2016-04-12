@@ -71,6 +71,10 @@ section:first-child {
     margin-top: 200px;
 }
 
+#myCarousel {
+    padding: 0;
+}
+
 .template, .draft {
   display: none;
 }

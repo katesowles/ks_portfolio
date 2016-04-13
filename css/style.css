@@ -1,48 +1,44 @@
 * {
-    /*margin: 0;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+}
+
+/* ------------ document-wide style ------------ */
+.row, .fullWidthOverride {
+    width: 100%;
+    margin: 0;
     padding: 0;
-    box-sizing: border-box;*/
-    font-family: "Source Sans", Helvetica, Arial, sans-serif;
 }
 
 body {
-    margin-top: 120px;
+    margin-top: 130px;
 }
 
-header {
-    padding: 10px;
-    background-color: rgba(255,255,255,0.8);
-    position: fixed !important; /* overriding bootstrap */
-    top: 0;
-    z-index: 100;
-}
-
-#logo, a #logo:link, a #logo:visited {
-    opacity: 0.3;
-    width: 75px;
-}
-
-a h1 {
+h1, h2, h3, h4, h5, h6, p {
     font-weight: 200;
-    margin-top: 25px;
+    line-height: 1em;
+    text-align: left;
 }
 
-a #logo:hover, a #logo:active {
-    opacity: 0.4;
+h2 {
+    font-size: 2.5em;
 }
 
-nav {
-    /*display: inline-block;*/
-    /*width: calc(100% - 80px);*/
-    text-align: right;
-    position: absolute;
-    top: 65px;
-    right: 25px;
+p, a, li {
+    font-size: 1em;
+    line-height: 1.0em;
+    padding: 0;
+}
+
+p {
+    text-align: justify;
+}
+
+strong p {
+    font-weight: 500;
 }
 
 a:link, a:visited {
     color: #999999;
-    font-size: 14px;
     font-weight: 200;
     text-decoration: none;
     text-transform: uppercase;
@@ -58,76 +54,102 @@ a:hover, a:active {
     padding: 0;
 }
 
-nav a, footer a {
+/* ------------ header style ------------ */
+
+header {
+    background-color: rgba(255,255,255,0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+#logo, a #logo:link, a #logo:visited {
+    opacity: 0.3;
+    width: 125px;
+    padding: 25px;
+    z-index: 150;
+}
+
+a #logo:hover, a #logo:active {
+    opacity: 0.4;
+}
+
+header nav {
+    text-align: right;
+    position: fixed;
+    top: 80px;
+    right: 25px;
+}
+
+nav a {
     margin-right: 20px !important; /* overriding bootstrap */
     color: #999999;
 }
+
 
 nav a:last-child, footer a:last-child {
     margin-right: 0 !important; /* overriding bootstrap */
 }
 
-section, footer {
-    padding: 0 50px 20px 50px;
-}
+/* ------------ portfolio style ------------ */
 
-footer {
-    text-align: center;
+img {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
 }
-
-#about, #contact {
-    display: none;
-}
-
-#myCarousel {
-    z-index: 0;
-}
-
 .carousel-control.left, .carousel-control.right {
     background: none;
-    z-index: 1000;
 }
 
 .carousel-caption {
+    width: 100%;
     position: relative;
-    top: -20px;
+    top: 20px;
     left: 0;
+    text-align: center;
     text-shadow: none;
     color: #999;
+    margin: 0 auto;
+    padding: 0;
+    height: 205px;
 }
 
 .carousel-indicators {
     display: none;
 }
 
-.container {
-    height: 200px;
-}
-
 .template, .draft, .hide {
   display: none;
 }
 
-img {
-    width: 100%;
-    height: auto;
+/* ------------ about style ------------ */
+
+#about {
+    display: none;
+    margin-top: 200px;
 }
 
-hr {
-    margin: 50px 0 30px 0;
+ul {
+    list-style-position: outside;
+    padding-left: 25px;
 }
 
-i {
-    margin-right: 15px;
+#social {
+    width: 105px;
+    margin: 0 auto;
+    padding-top: 10px;
 }
 
-i:last-child {
-    margin-right: 0;
+#social a {
+    text-align: center;
+    padding: 0px;
+    display: inline-block;
 }
 
-/*==================================================
-=            Bootstrap 3 Media Queries             =
-==================================================*/
+/* ------------ bootstrap media queries ------------ */
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) {

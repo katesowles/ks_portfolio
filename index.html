@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <title>Kate Sowles</title>
         <!-- TODO: reduce the number of weights/styles before final push -->
@@ -21,27 +21,26 @@
     </head>
     <body>
 
-        <header class="col-xs-12">
-            <img src="img/ks-logomark-dark-250px.png" alt="katesowles.com logo" id="logo" />
+        <header class="row">
+            <a href="index.html"><img src="img/ks-logomark-dark-250px.png" alt="katesowles.com logo" id="logo" /></a>
             <nav>
                 <a href="#myCarousel" id="toPortfolio">Portfolio</a>
                 <a href="#about" id="toAbout">About</a>
-                <!-- <a href="#contact" id="toContact">Contact</a> -->
             </nav>
         </header>
 
         <!-- start of template -->
-        <div class="item template">
-            <img src="" alt="">
+        <div class="item template row">
+            <img src="" alt="" class="col-xs-12">
             <div class="container">
-                <div class="carousel-caption">
-                    <a href=""><h3></h3></a>
+                <div class="carousel-caption col-xs-12">
+                    <a href=""><h2></h2></a>
                 </div>
             </div>
         </div>
         <!-- end of template -->
 
-        <section id="myCarousel" class="carousel slide" data-ride="carousel">
+        <section id="myCarousel" class="carousel slide row" data-ride="carousel">
             <!-- dot indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -61,31 +60,34 @@
             </a>
         </section>
 
-        <section id="about">
-            <img src="img/4.jpg" alt="katesowles bio photo" />
-            <h2>Hello there,&nbsp;I'm Kate.</h2>
-            <p>I'm a creative tinkerer in Portland, Oregon with a passion for both print and web design. When I'm not busy helping Squarespace customers realize their dreams through web design or doing the occasional freelance,&nbsp;I can be found doing one of the following:</p>
-            <ul>
-                <li>Teaching myself how to more effectively wield different coding languages</li>
-                <li>Attempting to conquer the Swedish language</li>
-                <li>Building a home in the woods with my husband</li>
-            </ul>
-            <p>Someday I'll even get around to putting my portfolio up on this site. Someday.</p>
+        <section id="about" class="row">
+            <div class="col-xs-0 col-sm-2 col-md-2">&nbsp;</div>
+            <div class="col-xs-12 col-sm-8">
+                <div class="col-md-6">
+                    <img src="img/4.jpg" alt="katesowles bio photo" />
+                </div>
+                <div class="col-md-6">
+                    <h2>Hello there, I'm Kate.</h2>
+                    <p>I'm a creative tinkerer in Portland, Oregon with a passion for both print and web design. When I'm not busy building sites and helping clients realize their dreams through design, I can more than likely be found reading, listening to podcasts, or building a house!</p>
+                    <p>Let's grab coffee, lunch, or beer sometime!</p>
+                    <nav id="social">
+                        <a href="https://twitter.com/katesowles" target="_blank"><i class="fa fa-twitter-square fa-lg"></i></a>
+                        <a href="https://github.com/katesowles" target="_blank"><i class="fa fa-github-square fa-lg"></i></a>
+                        <a href="https://www.instagram.com/katesowles/" target="_blank"><i class="fa fa-instagram fa-lg"></i></a>
+                    </nav>
+
+                </div>
+            </div>
+            <div class="col-xs-0 col-sm-2">&nbsp;</div>
         </section>
 
-        <!-- <section id="contact"></section> -->
-
-        <footer>
-            <a href="https://twitter.com/katesowles" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
-            <a href="https://github.com/katesowles" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
-            <a href="https://www.instagram.com/katesowles/" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
+        <footer class="row">
         </footer>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
         <script src="js/portfolioItems.js"></script>
-        <script src="js/getPortfolio.js"></script>
         <script src="js/getPortfolioToCarousel.js"></script>
         <script src="js/app.js"></script>
 

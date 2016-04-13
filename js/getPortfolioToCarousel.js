@@ -18,7 +18,7 @@ Project.prototype.toHtml = function() {
     var $newProject = $("div.template").clone();
 
     // sets the title of each new Project item
-    $newProject.find("h3").html(this.title);
+    $newProject.find("h2").html(this.title);
 
     // sets the category of each new Project item
     $newProject.attr("data-category", this.category);

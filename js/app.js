@@ -8,8 +8,4 @@ $(document).ready(function() {
         $("#myCarousel").hide();
         $("#about").show();
     });
-    $("#toContact").click(function() {
-        $("#myCarousel").hide();
-        $("#about").hide();
-    });
 });

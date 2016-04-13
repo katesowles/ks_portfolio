@@ -10,8 +10,7 @@
 }
 
 body {
-    margin-top: 125px;
-    margin-bottom: 50px;
+    margin-top: 130px;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -21,7 +20,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 2.5em;
 }
 
 p, a, li {
@@ -106,23 +105,20 @@ img {
 }
 
 .carousel-caption {
-    width: 65%;
+    width: 100%;
     position: relative;
-    top: -20px;
+    top: 20px;
     left: 0;
     text-align: center;
     text-shadow: none;
     color: #999;
     margin: 0 auto;
     padding: 0;
+    height: 205px;
 }
 
 .carousel-indicators {
     display: none;
-}
-
-.container {
-    height: 200px;
 }
 
 .template, .draft, .hide {
@@ -141,15 +137,6 @@ ul {
     padding-left: 25px;
 }
 
-footer {
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 50px;
-    background-color: rgba(255,255,255,0.8);
-}
-
 #social {
     width: 105px;
     margin: 0 auto;
@@ -166,29 +153,17 @@ footer {
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) {
-    h2 {
-        font-size: 2em;
-    }
+
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px) {
-    h2 {
-        font-size: 2.5em;
-    }
-    p {
 
-    }
 }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
-    h2 {
-        font-size: 3em;
-    }
-    p {
 
-    }
 }
 
 /* Medium Devices, Desktops */

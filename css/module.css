@@ -1,0 +1,59 @@
+/* Modules are the reusable, modular parts of our design. They are the callouts, the sidebar sections, the product lists and so on. */
+
+#logo, a #logo:link, a #logo:visited {
+  opacity: 0.3;
+  width: 125px;
+  padding: 25px;
+  z-index: 150;
+}
+
+a #logo:hover, a #logo:active {
+  opacity: 0.4;
+}
+
+#myCarousel {
+  padding: 0 75px;
+}
+
+.carousel-control.left, .carousel-control.right {
+  background: none;
+  z-index: 500;
+}
+
+.carousel-caption {
+  width: 100%;
+  position: relative;
+  top: 20px;
+  left: 0;
+  text-align: center;
+  text-shadow: none;
+  color: #999;
+  margin: 0 auto;
+  padding: 0;
+  height: 205px;
+}
+
+.carousel-indicators {
+  display: none;
+}
+
+#about {
+  display: none;
+}
+
+#about img {
+  margin-bottom: 25px;
+}
+
+#social {
+  width: 105px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+#social a {
+  font-size: 1.2em;
+  text-align: center;
+  padding: 0px;
+  display: inline-block;
+}

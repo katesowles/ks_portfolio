@@ -11,8 +11,8 @@
   "rules": {
     "semi": 1,
     "strict": 0,
-    "indent": [2, 4],
-    "quotes": [1, "double"],
+    "indent": [2, 2],
+    "quotes": [1, "single"],
     "no-multi-spaces": [1, {
       "exceptions": {
         "VariableDeclarator": true,

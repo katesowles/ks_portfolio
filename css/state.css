@@ -20,20 +20,44 @@
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
   #myCarousel {
-      margin-top: 30px;
-      padding: 0 125px;
+    margin-top: 30px;
+    padding: 0 125px;
+  }
+  .carousel-caption {
+    margin-top: 30px;
   }
   #about {
-      margin-top: 50px;
+    margin-top: 50px;
   }
 }
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
   #myCarousel {
-      margin-top: 50px;
+    margin-top: 20px;
   }
+  .carousel-caption {
+    margin-top: 60px;
+  }
+
   #about {
-      margin-top: 75px;
+    margin-top: 75px;
   }
+}
+
+/* -------------------------------------------------------------------------- */
+
+#widthChecker {
+  background-color: rgba(0,255,255,0.2);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  font-family: sans-serif;
+  font-size: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  height: 30px;
+  line-height: 30px;
 }

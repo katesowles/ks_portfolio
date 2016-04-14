@@ -106,6 +106,7 @@ img {
 }
 .carousel-control.left, .carousel-control.right {
     background: none;
+    z-index: 500;
 }
 
 .carousel-caption {

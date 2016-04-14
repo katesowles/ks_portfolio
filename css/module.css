@@ -56,4 +56,5 @@ a #logo:hover, a #logo:active {
   text-align: center;
   padding: 0px;
   display: inline-block;
+  z-index: 800;
 }

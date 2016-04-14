@@ -66,12 +66,12 @@ nav {
   right: 25px;
 }
 
-nav a {
-  margin-right: 20px !important; /* overriding bootstrap */
+nav a, #social a {
+  margin-right: 10px !important; /* overriding bootstrap */
   color: #999999;
 }
 
-nav a:last-child {
+nav a:last-child, #social a:last-child {
   margin-right: 0 !important; /* overriding bootstrap */
 }
 

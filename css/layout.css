@@ -1,0 +1,7 @@
+/* Layout rules divide the page into sections. Layouts hold one or more modules together. */
+
+.row {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}

@@ -1,189 +1,196 @@
 * {
-    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
 }
 
 /* ------------ document-wide style ------------ */
-.row, .fullWidthOverride {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+
+.row, {
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    margin-top: 130px;
+  margin-top: 130px;
 }
 
 h1, h2, h3, h4, h5, h6, p, li {
-    font-weight: 200;
-    line-height: 1em;
-    text-align: left;
+  font-weight: 200;
+  line-height: 1em;
+  text-align: left;
 }
 
 h2 {
-    font-size: 2.5em;
-    margin-top: 0;
+  font-size: 2.5em;
+  margin-top: 0;
 }
 
 p, a, li {
-    font-size: 1em;
-    line-height: 1.25em;
-    padding: 0;
+  font-size: 1em;
+  line-height: 1.25em;
+  padding: 0;
 }
 
 p {
-    text-align: justify;
+  text-align: justify;
 }
 
 strong p {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 a:link, a:visited {
-    color: #999999;
-    font-weight: 200;
-    text-decoration: none;
-    text-transform: uppercase;
-    margin-right: 15px;
-    margin: 0;
-    padding: 0;
+  color: #999999;
+  font-weight: 200;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-right: 15px;
+  margin: 0;
+  padding: 0;
 }
 
 a:hover, a:active {
-    color: #888888;
-    text-decoration: none;
-    margin: 0;
-    padding: 0;
+  color: #888888;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* ------------ header style ------------ */
 
 header {
-    background-color: rgba(255,255,255,0.8);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
+  background-color: rgba(255,255,255,0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
 #logo, a #logo:link, a #logo:visited {
-    opacity: 0.3;
-    width: 125px;
-    padding: 25px;
-    z-index: 150;
+  opacity: 0.3;
+  width: 125px;
+  padding: 25px;
+  z-index: 150;
 }
 
 a #logo:hover, a #logo:active {
-    opacity: 0.4;
+  opacity: 0.4;
 }
 
 header nav {
-    text-align: right;
-    position: fixed;
-    top: 80px;
-    right: 25px;
+  text-align: right;
+  position: fixed;
+  top: 80px;
+  right: 25px;
 }
 
 nav a {
-    margin-right: 20px !important; /* overriding bootstrap */
-    color: #999999;
+  margin-right: 20px !important; /* overriding bootstrap */
+  color: #999999;
 }
 
-
 nav a:last-child, footer a:last-child {
-    margin-right: 0 !important; /* overriding bootstrap */
+  margin-right: 0 !important; /* overriding bootstrap */
 }
 
 /* ------------ portfolio style ------------ */
 
 #myCarousel {
-    padding: 0 75px;
+  padding: 0 75px;
 }
+
 img {
-    width: 100%;
-    height: auto;
-    padding: 0;
-    margin: 0;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
 }
+
 .carousel-control.left, .carousel-control.right {
-    background: none;
+  background: none;
+  z-index: 500;
 }
 
 .carousel-caption {
-    width: 100%;
-    position: relative;
-    top: 20px;
-    left: 0;
-    text-align: center;
-    text-shadow: none;
-    color: #999;
-    margin: 0 auto;
-    padding: 0;
-    height: 205px;
+  width: 100%;
+  position: relative;
+  top: 20px;
+  left: 0;
+  text-align: center;
+  text-shadow: none;
+  color: #999;
+  margin: 0 auto;
+  padding: 0;
+  height: 205px;
 }
 
 .carousel-indicators {
-    display: none;
+  display: none;
 }
 
 .template, .draft, .hide {
-  display: none;
+display: none;
 }
 
 /* ------------ about style ------------ */
 
 #about {
-    display: none;
+  display: none;
+}
+
+#about img {
+  margin-bottom: 25px;
 }
 
 #social {
-    width: 105px;
-    margin: 0 auto;
-    padding-top: 10px;
+  width: 105px;
+  margin: 0 auto;
+  padding-top: 10px;
 }
 
 #social a {
-    font-size: 1.2em;
-    text-align: center;
-    padding: 0px;
-    display: inline-block;
+  font-size: 1.2em;
+  text-align: center;
+  padding: 0px;
+  display: inline-block;
 }
 
 /* ------------ bootstrap media queries ------------ */
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
-    #myCarousel {
-        margin-top: 60px;
-        padding: 0 100px;
-    }
-    #about {
-        margin-top: 20px;
-    }
-    h2 {
-        font-size: 3em;
-    }
-    p, nav a {
-        font-size: 1.5em;
-    }
+  #myCarousel {
+      margin-top: 60px;
+      padding: 0 100px;
+  }
+  #about {
+      margin-top: 20px;
+  }
+  h2 {
+      font-size: 3em;
+  }
+  p, nav a {
+      font-size: 1.5em;
+  }
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
-    #myCarousel {
-        margin-top: 30px;
-        padding: 0 125px;
-    }
-    #about {
-        margin-top: 50px;
-    }
+  #myCarousel {
+      margin-top: 30px;
+      padding: 0 125px;
+  }
+  #about {
+      margin-top: 50px;
+  }
 }
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
-    #myCarousel {
-        margin-top: 50px;
-    }
-    #about {
-        margin-top: 75px;
-    }
+  #myCarousel {
+      margin-top: 50px;
+  }
+  #about {
+      margin-top: 75px;
+  }
 }

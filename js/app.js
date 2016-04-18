@@ -9,10 +9,3 @@ $(document).ready(function() {
     $('#about').show();
   });
 });
-
-
-// window width checker below //////////////////////////////////////////////////
-
-$(window).resize(function() {
-  $('#widthChecker').text('Screen Width: ' + window.innerWidth);
-});

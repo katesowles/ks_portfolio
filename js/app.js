@@ -4,6 +4,7 @@
     this.title = opts.title;
     this.category = opts.category;
     this.clientUrl = opts.clientUrl;
+    this.linkDesc = opts.linkDesc;
     this.imageSrc = opts.imageSrc;
     this.description = opts.description;
     this.publishedOn = opts.publishedOn;
@@ -23,7 +24,7 @@
 
   Project.loadAndSort = function(rawData) {
     // sorts the data in order of published on, most recent at top
-    rawData.reduce(function(a,b) {
+    rawData.sort(function(a,b) {
       return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
     });
 

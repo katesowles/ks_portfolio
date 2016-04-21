@@ -1,5 +1,7 @@
 /* Modules are the reusable, modular parts of our design. They are the callouts, the sidebar sections, the product lists and so on. */
 
+/* Nav elements */
+
 #logo, a #logo:link, a #logo:visited {
   opacity: 0.3;
   width: 125px;
@@ -11,8 +13,18 @@ a #logo:hover, a #logo:active {
   opacity: 0.4;
 }
 
+a.viewing {
+  font-weight: 500;
+}
+
+/* Portfolio elements */
+
 #myCarousel {
   padding: 0 75px;
+}
+
+.carousel-inner {
+  height: 110%;
 }
 
 .carousel-control.left, .carousel-control.right {
@@ -23,23 +35,30 @@ a #logo:hover, a #logo:active {
 .carousel-caption {
   width: 100%;
   position: relative;
-  top: 20px;
-  left: 0;
+  top: 0px;
+  left: 0px;
   text-align: center;
   text-shadow: none;
   color: #999;
   margin: 0 auto;
-  padding: 0;
-  height: 205px;
 }
 
 .carousel-indicators {
   display: none;
 }
 
-#about {
-  display: none;
+/* Recent elements */
+
+.recent {
+  padding-bottom: 50px;
+  float: left;
 }
+
+.recent img {
+  margin-bottom: 25px;
+}
+
+/* About elements */
 
 #about img {
   margin-bottom: 25px;
@@ -57,4 +76,12 @@ a #logo:hover, a #logo:active {
   padding: 0px;
   display: inline-block;
   z-index: 800;
+}
+
+/* Default display state */
+
+#recent, #about {
+  display: none;
+  padding-top: 130px;
+  margin-top: -130px;
 }

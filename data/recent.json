@@ -1,0 +1,30 @@
+[
+  {
+    "title"       :   "Calendar",
+    "liveUrl"     :   "http://katesowles.github.io/ks_calendar",
+    "repoUrl"     :   "https://github.com/katesowles/ks_calendar",
+    "imageSrc"    :   "img/4.jpg",
+    "description" :   "<p>A quick weekend project to become more familiar with jQuery and some advanced CSS selectors. It serves as a simple homepage with a low-key view of a calendar.</p>"
+  },
+  {
+    "title"       :   "Spot A Salmon",
+    "liveUrl"     :   "http://katesowles.github.io/201_final",
+    "repoUrl"     :   "https://github.com/katesowles/201_final",
+    "imageSrc"    :   "img/4.jpg",
+    "description" :   "<p>A collaborative group project to bring awareness to the degredation of Salmon migration patterns along first 200 miles of the Columbia River. Incorporates the Skeleton framework, the Highcharts library, custom graphics, CSS animations, local storage, and data from the Army Corp of Engineers (harvested via RSS) stored as JSON.</p>"
+  },
+  {
+    "title"       :   "BusMall",
+    "liveUrl"     :   "http://katesowles.github.io/ks_busMall",
+    "repoUrl"     :   "https://github.com/katesowles/ks_busMall",
+    "imageSrc"    :   "img/4.jpg",
+    "description" :   "<p>A play off of the SkyMall magazine, I created a voting platform with images of GroveMade products. Incorporates the Skeleton framework, the Chart.js library, and local storage.</p>"
+  },
+  {
+    "title"       :   "Pizza Neue",
+    "liveUrl"     :   "http://katesowles.github.io/ks_pizza",
+    "repoUrl"     :   "https://github.com/katesowles/ks_pizza",
+    "imageSrc"    :   "img/4.jpg",
+    "description" :   "<p>Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>"
+  }
+]

@@ -37,6 +37,10 @@ a #logo:hover, a #logo:active {
   display: none;
 }
 
+#portfolio {
+  display: none;
+}
+
 #about {
   display: none;
 }

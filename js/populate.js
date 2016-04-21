@@ -22,19 +22,25 @@
   // hides or shows content based on nav clicks
   $(document).ready(function() {
     $('#toPortfolio').click(function() {
+      $('nav a').removeClass('viewing');
       $('#recent').hide();
       $('#about').hide();
       $('#portfolio').show();
+      $('nav #toPortfolio').addClass('viewing');
     });
     $('#toRecent').click(function() {
+      $('nav a').removeClass('viewing');
       $('#portfolio').hide();
       $('#about').hide();
       $('#recent').show();
+      $('nav #toRecent').addClass('viewing');
     });
     $('#toAbout').click(function() {
+      $('nav a').removeClass('viewing');
       $('#portfolio').hide();
       $('#recent').hide();
       $('#about').show();
+      $('nav #toAbout').addClass('viewing');
     });
   });
 

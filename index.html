@@ -25,6 +25,7 @@
             <div class="container col-xs-12 col-md-3">
                 <div class="carousel-caption">
                     <h2>{{title}}</h2>
+                    {{{taglink}}}
                     <a href="{{clientUrl}}" target="_blank"><p>{{linkDesc}}</p></a>
                     {{{description}}}
                 </div>
@@ -32,7 +33,7 @@
         </article>
     </script>
     <script id="recentTemplate" type="text/x-handlebars-template">
-            <article class="col-xs-12 recent">
+            <article class="col-xs-12 col-sm-6 col-md-4 col-lg-3 recent">
               <img src="{{imageSrc}}" alt="{{title}}">
               <h2>{{title}}</h2>
               <h6><a href="{{liveUrl}}">See Live Site</a>&emsp;&#124;&emsp;<a href="{{repoUrl}}">See Repo Page</a></h6>
@@ -46,7 +47,7 @@
     <header class="row">
         <a href="index.html"><img src="img/ks-logomark-dark-250px.png" alt="katesowles.com logo" id="logo" /></a>
         <nav>
-            <a href="#portfolio" id="toPortfolio">Portfolio</a>
+            <a href="#portfolio" id="toPortfolio" class="viewing">Portfolio</a>
             <a href="#recent" id="toRecent">Recent</a>
             <a href="#about" id="toAbout">About</a>
         </nav>

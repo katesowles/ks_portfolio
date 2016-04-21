@@ -13,6 +13,10 @@ a #logo:hover, a #logo:active {
   opacity: 0.4;
 }
 
+a.viewing {
+  font-weight: 500;
+}
+
 /* Portfolio elements */
 
 #myCarousel {
@@ -47,6 +51,7 @@ a #logo:hover, a #logo:active {
 
 .recent {
   padding-bottom: 50px;
+  float: left;
 }
 
 .recent img {
@@ -75,6 +80,8 @@ a #logo:hover, a #logo:active {
 
 /* Default display state */
 
-#portfolio, #about {
+#recent, #about {
   display: none;
+  padding-top: 130px;
+  margin-top: -130px;
 }

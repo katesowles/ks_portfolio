@@ -3,6 +3,7 @@
   function Portfolio (opts) {
     this.title = opts.title;
     this.category = opts.category;
+    this.taglink = opts.taglink;
     this.clientUrl = opts.clientUrl;
     this.linkDesc = opts.linkDesc;
     this.imageSrc = opts.imageSrc;

@@ -6,33 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Kate Sowles</title>
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600' rel='stylesheet' type='text/css'>
-    <link href="vendor/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/module.css">
+    <link rel="stylesheet" href="css/state.css">
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script id="projectTemplate" type="text/x-handlebars-template">
-
-        <div class="active item row">
+    <script id="portfolioTemplate" type="text/x-handlebars-template">
+        <article class="active item row portfolio">
             <div class="col-md-9">
                 <img src="{{imageSrc}}" alt="{{title}}">
             </div>
             <div class="container col-xs-12 col-md-3">
                 <div class="carousel-caption">
                     <h2>{{title}}</h2>
+                    {{{taglink}}}
                     <a href="{{clientUrl}}" target="_blank"><p>{{linkDesc}}</p></a>
                     {{{description}}}
                 </div>
             </div>
-        </div>
-
+        </article>
     </script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/module.css">
-    <link rel="stylesheet" href="css/state.css">
+    <script id="recentTemplate" type="text/x-handlebars-template">
+            <article class="col-xs-12 col-sm-6 col-md-4 col-lg-3 recent">
+              <img src="{{imageSrc}}" alt="{{title}}">
+              <h2>{{title}}</h2>
+              <h6><a href="{{liveUrl}}">See Live Site</a>&emsp;&#124;&emsp;<a href="{{repoUrl}}">See Repo Page</a></h6>
+              {{{description}}}
+            </article>
+    </script>
 </head>
 
 <body>
@@ -40,13 +47,14 @@
     <header class="row">
         <a href="index.html"><img src="img/ks-logomark-dark-250px.png" alt="katesowles.com logo" id="logo" /></a>
         <nav>
-            <a href="#myCarousel" id="toPortfolio">Portfolio</a>
+            <a href="#portfolio" id="toPortfolio" class="viewing">Portfolio</a>
+            <a href="#recent" id="toRecent">Recent</a>
             <a href="#about" id="toAbout">About</a>
         </nav>
     </header>
 
     <section id="portfolio" class="row">
-        <div id="myCarousel" class="carousel slide col-xs-12 col-md-12" data-ride="carousel">
+        <article id="myCarousel" class="carousel slide col-xs-12 col-md-12" data-ride="carousel">
 
             <!-- dot indicators -->
             <ol class="carousel-indicators">
@@ -69,7 +77,11 @@
                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
-        </div>
+        </article>
+    </section>
+
+    <section id="recent" class="row">
+      <!-- recent work will be inserted here -->
     </section>
 
     <section id="about" class="row">
@@ -87,18 +99,20 @@
                     <a href="https://github.com/katesowles" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
                     <a href="https://www.instagram.com/katesowles/" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
                 </div>
-
             </div>
         </div>
         <div class="col-xs-0 col-sm-1 col-md-1 col-lg-2">&nbsp;</div>
     </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="vendor/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-    <script src="js/app.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="js/portfolio.js"></script>
+    <script src="js/recent.js"></script>
+    <script src="js/populate.js"></script>
     <script>
-        Project.fetchAll();
+        Portfolio.fetchAll();
+        Recent.recentFetchAll();
     </script>
 </body>
 

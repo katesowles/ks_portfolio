@@ -27,7 +27,7 @@
     });
   };
 
-  Recent.recentFetchAll = function(recentRawData) {
+  Recent.fetchAll = function(recentRawData) {
     // if the data is already in localStorage, parse it and pull it back
     if (localStorage.recentRawData) {
       Recent.loadAndSort(JSON.parse(localStorage.recentRawData));

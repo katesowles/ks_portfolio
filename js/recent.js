@@ -10,7 +10,7 @@
 
   Recent.all = [];
 
-  Recent.prototype.recentToHtml = function() {
+  Recent.prototype.toHtml = function() {
     var source = $('#recentTemplate').html();
     var template = Handlebars.compile(source);
 

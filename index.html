@@ -26,19 +26,18 @@
                 <div class="carousel-caption">
                     <h2>{{title}}</h2>
                     {{{taglink}}}
-                    <a href="{{clientUrl}}" target="_blank"><p>{{linkDesc}}</p></a>
-                    {{{description}}}
+                    {{{caption}}}
                 </div>
             </div>
         </article>
     </script>
     <script id="recentTemplate" type="text/x-handlebars-template">
-            <article class="col-xs-12 col-sm-6 col-md-4 col-lg-3 recent">
-              <img src="{{imageSrc}}" alt="{{title}}">
-              <h2>{{title}}</h2>
-              <h6><a href="{{liveUrl}}">See Live Site</a>&emsp;&#124;&emsp;<a href="{{repoUrl}}">See Repo Page</a></h6>
-              {{{description}}}
-            </article>
+        <article class="col-xs-12 col-sm-6 col-md-4 col-lg-3 recent">
+          <img src="{{imageSrc}}" alt="{{title}}">
+          <h2>{{title}}</h2>
+          {{{taglink}}}
+          {{{caption}}}
+        </article>
     </script>
 </head>
 
@@ -107,12 +106,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="js/portfolio.js"></script>
-    <script src="js/recent.js"></script>
+    <!-- <script src="js/portfolio.js"></script> -->
+    <!-- <script src="js/recent.js"></script> -->
+    <script src="js/sandbox.js"></script>
     <script src="js/populate.js"></script>
     <script>
-        Portfolio.fetchAll();
-        Recent.recentFetchAll();
+      var portfolio = new Page('PortfolioDataSet', 'portfolio', '.carousel-inner', 'portfolioTemplate');
+      var recent = new Page('RecentDataSet', 'recent', '#recent', 'recentTemplate' );
+
+      portfolio.fetchAll(function() { populate.buildIndexPage(portfolio) });
+      recent.fetchAll(function() { populate.buildIndexPage(recent) });
     </script>
 </body>
 

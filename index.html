@@ -106,12 +106,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="js/portfolio.js"></script>
-    <script src="js/recent.js"></script>
+    <!-- <script src="js/portfolio.js"></script> -->
+    <!-- <script src="js/recent.js"></script> -->
+    <script src="js/sandbox.js"></script>
     <script src="js/populate.js"></script>
     <script>
-      Portfolio.fetchAll();
-      Recent.fetchAll();
+      var portfolio = new Page('PortfolioDataSet', 'portfolio', 'portfolioTemplate');
+      var recent = new Page('RecentDataSet', 'recent', 'recentTemplate');
+
+      portfolio.fetchAll(populate.buildIndexPage(portfolio), portfolio);
+      // recent.fetchAll(populate.buildIndexPage(recent));
     </script>
 </body>
 

@@ -2,19 +2,14 @@
 
   var populate = {};
 
-  populate.buildIndexPage = function () {
+  populate.buildIndexPage = function (page) {
     // removes the active status from all but the first project slide
     $('.carousel-inner').find(function() {
       $('.active:gt(1)').removeClass('active');
     });
-
     // pushes each project to the carousel
-    Portfolio.all.forEach(function(a){
-      $('.carousel-inner').append(a.toHtml());
-    });
-
-    Recent.all.forEach(function(a){
-      $('#recent').append(a.toHtml());
+    page.items.forEach(function(a){
+      $(page.location).append(a.toHtml(embedId));
     });
 
   };

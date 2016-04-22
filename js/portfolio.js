@@ -15,8 +15,8 @@
     var source = $('#portfolioTemplate').html();
     var template = Handlebars.compile(source);
 
-    this.daysAgo = parseInt((new Date() - new Date(this.pubDate))/60/60/24/1000);
-    this.publishStatus = this.pubDate ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
+    // this.daysAgo = parseInt((new Date() - new Date(this.pubDate))/60/60/24/1000);
+    // this.publishStatus = this.pubDate ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
 
     return template(this);
   };
@@ -33,23 +33,22 @@
     });
   };
 
-  Portfolio.fetchAll = function(rawData) {
+  Portfolio.fetchAll = function(rawData, callback) {
     // if the data is already in localStorage, parse it and pull it back
     if (localStorage.rawData) {
       Portfolio.loadAndSort(JSON.parse(localStorage.rawData));
-      populate.buildIndexPage();
-    } else {
+      callback;
+    }
+    else {
     // if the data isn't in localStorage, stringify and put it there.
       var newData = $.getJSON( 'data/portfolio.json' );
       newData.done(function (data) {
         Portfolio.loadAndSort(data);
         localStorage.rawData = JSON.stringify(data);
-        populate.buildIndexPage();
+        callback;
       });
     }
   };
-
-
 
   module.Portfolio = Portfolio;
 

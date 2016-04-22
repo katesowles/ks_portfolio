@@ -28,18 +28,18 @@
     });
   };
 
-  Recent.fetchAll = function(recentRawData) {
+  Recent.fetchAll = function(recentRawData, callback) {
     // if the data is already in localStorage, parse it and pull it back
     if (localStorage.recentRawData) {
       Recent.loadAndSort(JSON.parse(localStorage.recentRawData));
-      populate.buildIndexPage();
+      callback;
     } else {
     // if the data isn't in localStorage, stringify and put it there.
       var newRecentData = $.getJSON( 'data/recent.json' );
       newRecentData.done(function (recentData) {
         Recent.loadAndSort(recentData);
         localStorage.recentRawData = JSON.stringify(recentData);
-        populate.buildIndexPage();
+        callback;
       });
     }
   };

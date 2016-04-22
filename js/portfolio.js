@@ -4,11 +4,9 @@
     this.title = opts.title;
     this.category = opts.category;
     this.taglink = opts.taglink;
-    this.clientUrl = opts.clientUrl;
-    this.linkDesc = opts.linkDesc;
     this.imageSrc = opts.imageSrc;
-    this.description = opts.description;
-    this.publishedOn = opts.publishedOn;
+    this.pubDate = opts.pubDate;
+    this.caption = opts.caption;
   };
 
   Portfolio.all = [];
@@ -17,8 +15,8 @@
     var source = $('#portfolioTemplate').html();
     var template = Handlebars.compile(source);
 
-    this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
-    this.publishStatus = this.publishedOn ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
+    // this.daysAgo = parseInt((new Date() - new Date(this.pubDate))/60/60/24/1000);
+    // this.publishStatus = this.pubDate ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
 
     return template(this);
   };
@@ -26,7 +24,7 @@
   Portfolio.loadAndSort = function(rawData) {
     // sorts the data in order of published on, most recent at top
     rawData.sort(function(a,b) {
-      return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
+      return (new Date(b.pubDate)) - (new Date(a.pubDate));
     });
 
     // loads the now-sorted data via .map()
@@ -35,18 +33,19 @@
     });
   };
 
-  Portfolio.fetchAll = function(rawData) {
+  Portfolio.fetchAll = function(rawData, callback) {
     // if the data is already in localStorage, parse it and pull it back
     if (localStorage.rawData) {
       Portfolio.loadAndSort(JSON.parse(localStorage.rawData));
-      populate.buildIndexPage();
-    } else {
+      callback;
+    }
+    else {
     // if the data isn't in localStorage, stringify and put it there.
       var newData = $.getJSON( 'data/portfolio.json' );
       newData.done(function (data) {
         Portfolio.loadAndSort(data);
         localStorage.rawData = JSON.stringify(data);
-        populate.buildIndexPage();
+        callback;
       });
     }
   };

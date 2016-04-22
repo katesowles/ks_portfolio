@@ -111,11 +111,11 @@
     <script src="js/sandbox.js"></script>
     <script src="js/populate.js"></script>
     <script>
-      var portfolio = new Page('PortfolioDataSet', 'portfolio', 'portfolioTemplate');
-      var recent = new Page('RecentDataSet', 'recent', 'recentTemplate');
+      var portfolio = new Page('PortfolioDataSet', 'portfolio', '.carousel-inner', 'portfolioTemplate');
+      var recent = new Page('RecentDataSet', 'recent', '#recent', 'recentTemplate' );
 
-      portfolio.fetchAll(populate.buildIndexPage(portfolio), portfolio);
-      // recent.fetchAll(populate.buildIndexPage(recent));
+      portfolio.fetchAll(function() { populate.buildIndexPage(portfolio) });
+      recent.fetchAll(function() { populate.buildIndexPage(recent) });
     </script>
 </body>
 

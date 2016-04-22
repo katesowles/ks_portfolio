@@ -4,14 +4,14 @@
 
   populate.buildIndexPage = function (page) {
     // removes the active status from all but the first project slide
+    console.log('page.items.length', page.items.length);
     $('.carousel-inner').find(function() {
       $('.active:gt(1)').removeClass('active');
     });
     // pushes each project to the carousel
     page.items.forEach(function(a){
-      $(page.location).append(a.toHtml(embedId));
+      $(page.location).append(a.toHtml(page.templateId));
     });
-
   };
 
   // hides or shows content based on nav clicks

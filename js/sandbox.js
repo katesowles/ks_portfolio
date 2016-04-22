@@ -1,47 +1,21 @@
-// function makeSizer(size, mult) {
-//
-//   return function(mult) {
-//     document.body.style.fontSize = (mult * size) + 'px';
-//   };
-// }
-//
-// var size12 = makeSizer(12);
-// var size14 = makeSizer(14);
-// var size16 = makeSizer(16);
-
-///////////////////////////////////////////////////////////////////////////////
-
-// var add = (function() {
-//   var counter = 0;
-//   return function() {
-//     return counter += 1;
-//   };
-// })();
-//
-// add();
-// add();
-// add();
-
-///////////////////////////////////////////////////////////////////////////////
-
-// Page
-// embedId
-// DatasetKey
-// Filename
-
-function Page (DatasetKey, Filename, location) {
+function Page (DatasetKey, Filename, location, templateId) {
   this.DatasetKey = DatasetKey;
   this.Filename = Filename;
   this.location = location;
+  this.templateId = templateId;
   this.items = [];
-  this.loadAndSort = function(data, page) {
+
+  var that = this;
+
+  this.loadAndSort = function(data) {
     console.log('filename in loadAndSort: ', this.Filename);
     data.sort(function(a,b) {
       return (new Date(b.pubDate)) - (new Date(a.pubDate));
     });
     data.forEach(function(item) {
-      page.items.push(new Item(item));
+      that.items.push(new Item(item));
     });
+    console.log('items.length', that.items.length);
   };
 }
 
@@ -54,34 +28,26 @@ function Item (opts) {
   this.caption = opts.caption;
 };
 
-Page.prototype.toHtml = function() {
-  var source = $('#' + this.location).html();
-  var template = Handlebars.compile(source);
-  return template(this);
-};
-
-Page.prototype.fetchAll = function(callback, page) {
-  // console.log('filename in fetchAll: ', this.Filename);
-  // var loadAndSort = function(data, page) {
-  //   console.log('filename in loadAndSort: ', this.Filename);
-  //   data.sort(function(a,b) {
-  //     return (new Date(b.pubDate)) - (new Date(a.pubDate));
-  //   });
-  //   data.forEach(function(item) {
-  //     page.items.push(new Item(item));
-  //   });
-  // };
+Page.prototype.fetchAll = function(callback) {
 
   if (localStorage[this.DatasetKey]) {
     this.loadAndSort(JSON.parse(localStorage[this.DatasetKey]));
-    callback;
+    callback(arguments[1]);
   }
   else {
+    var that = this;
+    console.log('else');
     var newData = $.getJSON('data/' + this.Filename + '.json');
     newData.done(function(data) {
-      this.loadAndSort(data);
+      that.loadAndSort(data);
       localStorage[this.DatasetKey] = JSON.stringify(data);
-      callback;
+      callback(arguments[1]);
     });
   }
+};
+
+Item.prototype.toHtml = function(templateId) {
+  var source = $('#' + templateId).html();
+  var template = Handlebars.compile(source);
+  return template(this);
 };

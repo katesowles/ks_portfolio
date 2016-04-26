@@ -4,7 +4,6 @@
 
   populate.buildIndexPage = function (page) {
     // removes the active status from all but the first project slide
-    console.log('page.items.length', page.items.length);
     $('.carousel-inner').find(function() {
       $('.active:gt(1)').removeClass('active');
     });

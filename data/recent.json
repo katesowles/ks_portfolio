@@ -19,7 +19,7 @@
     "title"     :   "BusMall",
     "category"  :   "Tinker",
     "taglink"   :   "<a href='https://github.com/katesowles/ks_busMall'><h6>Visit Repo</h6></a>",
-    "imageSrc"  :   "img/calendar.png",
+    "imageSrc"  :   "img/busmall.png",
     "pubDate"   :   "2016-03-29",
     "caption"   :   "<p>A play off of the SkyMall magazine, I created a voting platform with images of GroveMade products. Incorporates the Skeleton framework, the Chart.js library, and local storage.</p>"
   },

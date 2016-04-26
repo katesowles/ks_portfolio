@@ -8,14 +8,12 @@ function Page (DatasetKey, Filename, location, templateId) {
   var that = this;
 
   this.loadAndSort = function(data) {
-    console.log('filename in loadAndSort: ', this.Filename);
     data.sort(function(a,b) {
       return (new Date(b.pubDate)) - (new Date(a.pubDate));
     });
     data.forEach(function(item) {
       that.items.push(new Item(item));
     });
-    console.log('items.length', that.items.length);
   };
 }
 
@@ -36,7 +34,6 @@ Page.prototype.fetchAll = function(callback) {
   }
   else {
     var that = this;
-    console.log('else');
     var newData = $.getJSON('data/' + this.Filename + '.json');
     newData.done(function(data) {
       that.loadAndSort(data);

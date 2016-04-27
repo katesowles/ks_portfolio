@@ -13,25 +13,6 @@
         repos.all = data;
       }
     }).done(callback);
-
-    // var url = '/github/user/repos' +
-    // var authString = 'token '+ githubToken;
-    // var jqXHR = $.ajax({
-    //   url : url,
-    //   type : 'GET',
-    //   dataType : 'JSON',
-    //   headers : {
-    //     "Authorization" : authString
-    //   },
-    // }).done( function (data) {
-    //   data.map( function(obj) {
-    //     repos.all.push(obj);
-    //   });
-    // }).error(function () {
-    // });
-    // if (callback) {
-    //   callback();
-    // }
   };
 
   repos.owned = function() {

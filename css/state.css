@@ -1,5 +1,13 @@
 /* State rules are ways to describe how our modules or layouts will look when in a particular state. Is it hidden or expanded? Is it active or inactive? They are about describing how a module or layout looks on screens that are smaller or bigger. They are also about describing how a module might look in different views like the home page or the inside page. */
 
+/************************ Default display state ************************/
+
+#recent, #about {
+  display: none;
+  padding-top: 130px;
+  margin-top: -130px;
+}
+
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
   #myCarousel {

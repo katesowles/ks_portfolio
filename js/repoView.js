@@ -14,7 +14,7 @@
 
     $('#recent').append(
       repos.owned(owner).map(render)
-    );
+    ).hide();
   };
 
   module.repoView = repoView;

@@ -88,11 +88,3 @@ a.viewing {
   display: inline-block;
   z-index: 800;
 }
-
-/************************ Default display state ************************/
-
-#recent, #about {
-  display: none;
-  padding-top: 130px;
-  margin-top: -130px;
-}

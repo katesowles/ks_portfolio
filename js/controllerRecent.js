@@ -7,9 +7,6 @@
 
     $('nav a').removeClass('viewing');
     $('nav #toRecent').addClass('viewing');
-
-    repos.requestRepos(repoView.index);
-
   };
 
   module.controllerRecent = controllerRecent;

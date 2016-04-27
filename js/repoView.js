@@ -3,13 +3,14 @@
 
   var ui = function() {
     var $recent = $('#recent');
+
     $recent.empty();
     $recent.show();
   };
 
   var render = Handlebars.compile($('#recentTemplate').html());
 
-  repoView.index = function() {
+  repoView.index = function(owner) {
     ui();
 
     $('#recent').append(

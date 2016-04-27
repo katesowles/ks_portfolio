@@ -37,11 +37,30 @@ Page.prototype.fetchAll = function(callback) {
     var newData = $.getJSON('data/' + this.Filename + '.json');
     newData.done(function(data) {
       that.loadAndSort(data);
-      localStorage[this.DatasetKey] = JSON.stringify(data);
+      localStorage[that.DatasetKey] = JSON.stringify(data);
       callback(arguments[1]);
     });
   }
 };
+
+Page.prototype.fetchGithub = function (callback) {
+  if (localStorage[this.DatasetKey]) {
+    this.loadAndSort(JSON.parse(localStorage[this.DatasetKey]));
+    callback(arguments[1]);
+  }
+  else {
+    var that = this;
+    repos.requestRepos(function () {
+      var newData = repos.owned();
+      newData.forEach(function(data) {
+        that.loadAndSort(data);
+        localStorage[that.DatasetKey] = JSON.stringify(data);
+        callback(arguments[1]);
+      });
+    });
+  }
+};
+
 
 Item.prototype.toHtml = function(templateId) {
   var source = $('#' + templateId).html();

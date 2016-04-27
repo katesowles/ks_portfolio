@@ -2,11 +2,17 @@
   var controllerRecent = {};
 
   controllerRecent.index = function() {
-    // var recent = new Page('RecentDataSet', 'recent', '#recent', 'recentTemplate' );
-    // recent.fetchAll(function() { populate.buildIndexPage(recent); });
     $('section').hide();
+    $('header').show();
     $('#recent').show();
+
+    $('nav a').removeClass('viewing');
+    $('nav #toRecent').addClass('viewing');
+
+    $('#recent article').remove();
+
     repos.requestRepos(repoView.index);
+
   };
 
   module.controllerRecent = controllerRecent;

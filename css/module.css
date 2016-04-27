@@ -49,6 +49,10 @@ a.viewing {
 
 /* Recent elements */
 
+#recent {
+  padding: 0 100px;
+}
+
 .recent {
   padding-bottom: 50px;
   float: left;

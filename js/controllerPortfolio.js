@@ -2,11 +2,11 @@
   var controllerPortfolio = {};
 
   controllerPortfolio.index = function() {
-    var portfolio = new Page('PortfolioDataSet', 'portfolio', '.carousel-inner', 'portfolioTemplate');
-    portfolio.fetchAll(function() { populate.buildIndexPage(portfolio); });
-
     $('section').hide();
     $('#portfolio').show();
+
+    $('nav a').removeClass('viewing');
+    $('nav #toPortfolio').addClass('viewing');
   };
 
   module.controllerPortfolio = controllerPortfolio;

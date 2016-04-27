@@ -61,7 +61,6 @@ Page.prototype.fetchGithub = function (callback) {
   }
 };
 
-
 Item.prototype.toHtml = function(templateId) {
   var source = $('#' + templateId).html();
   var template = Handlebars.compile(source);

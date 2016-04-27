@@ -32,14 +32,15 @@
         </article>
     </script>
     <script id="recentTemplate" type="text/x-handlebars-template">
-        <article class="col-xs-12 col-sm-6 col-md-4 col-lg-3 recent">
-          <!-- <img src="{{imageSrc}}" alt="{{name}}"> -->
-          <h2>{{name}}</h2>
-          <a href="{{html_url}}"><h6>See Repo</h6></a>
-          <h6>Created on {{created_at}}</h6>
-          <h6>Last Updated on <a href="{{_XXX_}}">{{updated_at}}</a></h6>
-          <p>{{description}}</p>
-        </article>
+      <!-- <article class="col-xs-12 col-sm-6 col-md-4 col-lg-3 recent"> -->
+      <article class="recent">
+        <!-- <img src="{{imageSrc}}" alt="{{name}}"> -->
+        <h2>{{name}}</h2>
+        <a href="{{html_url}}"><h6>See Repo</h6></a>
+        <h6>Created on {{created_at}}</h6>
+        <h6>Last Updated on <a href="{{_XXX_}}">{{updated_at}}</a></h6>
+        <p>{{description}}</p>
+      </article>
     </script>
 </head>
 
@@ -88,10 +89,10 @@
   <section id="about" class="row">
       <div class="col-xs-0 col-sm-1 col-md-1 col-lg-2">&nbsp;</div>
       <div class="col-xs-12 col-sm-10 col-md-10 col-lg-8">
-          <div class="col-md-6 col-lg-6">
+          <div class="col-md-6">
               <img src="img/4.jpg" alt="katesowles bio photo" />
           </div>
-          <div class="col-md-5 col-lg-6">
+          <div class="col-md-6">
               <h2>Hello there, I'm Kate.</h2>
               <p>I'm a creative tinkerer in Portland, Oregon with a passion for both print and web design. When I'm not busy building sites and helping clients realize their dreams through design, I can more than likely be found reading, listening to podcasts, or building a house!</p>
               <p>Let's grab coffee, lunch, or beer sometime!</p>
@@ -109,14 +110,17 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.7.1/page.js"></script>
-  <script src='js/githubCredentials.js'></script>
+
   <script src='js/repo.js'></script>
   <script src='js/repoView.js'></script>
+
   <script src="js/controllerPortfolio.js"></script>
   <script src="js/controllerRecent.js"></script>
   <script src="js/controllerAbout.js"></script>
+
   <script src="js/sandbox.js"></script>
   <script src="js/populate.js"></script>
+
   <script src="js/routing.js"></script>
 </body>
 

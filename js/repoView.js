@@ -4,7 +4,6 @@
   var ui = function() {
     var $recent = $('#recent');
 
-    $recent.empty();
     $recent.show();
   };
 

@@ -85,8 +85,8 @@
       $('.active:gt(1)').removeClass('active');
     });
     // pushes each project to the container on the page it belongs in
-    page.items.forEach(function(a){
-      $(page.location).append(a.toHtml(page.templateId));
+    page.items.forEach(function(pageData){
+      $(page.location).append(pageData.toHtml(page.templateId));
     });
   };
 

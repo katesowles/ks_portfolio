@@ -10,7 +10,7 @@
             '&sort=updated',
       type: 'GET',
       headers : {
-        "Authorization" : 'token ' + GITHUB_TOKEN
+        "Authorization" : 'token ' + GH_TOKEN
       },
       success: function (data, message, xhr) { // when info is successfully received, push to repos.all
         repos.all = data;

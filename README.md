@@ -1,4 +1,3 @@
 # ks_portfolio
 
-live : lookwemadeathing.com
-heroku : ks-portfolio.heroku.com
+lookwemadeathing.com // ks-portfolio.heroku.com

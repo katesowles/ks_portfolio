@@ -2,7 +2,6 @@
 
   var view = {};
   var portfolio = new Page('PortfolioDataSet', 'portfolio', '.carousel-inner', 'portfolioTemplate');
-
   var recent = new Page('RecentDataSet', 'recent', '#recent', 'recentTemplate');
 
   function Page (DatasetKey, Filename, location, templateId) {
@@ -11,19 +10,17 @@
     this.location = location;
     this.templateId = templateId;
     this.items = [];
-
     var that = this;
-
-    // will produce an error when fetchGithub is run...to be fixed
     this.loadAndSort = function(data) {
-      // console.log('this', this);
-      // console.log('data', data);
       data.sort(function(a,b) {
-        return (new Date(b.pubDate)) - (new Date(a.pubDate));
+        (new Date(b.pubDate)) - (new Date(a.pubDate));
       });
       data.forEach(function(item) {
         that.items.push(new Item(item));
       });
+    };
+    this.loadGithub = function(data) {
+      that.items.push(new Item(data));
     };
   }
 
@@ -40,7 +37,6 @@
 
     if (localStorage[this.DatasetKey]) {
       this.loadAndSort(JSON.parse(localStorage[this.DatasetKey]));
-      // callback(arguments[1]);
       callback();
     }
     else {
@@ -49,25 +45,23 @@
       newData.done(function(data) {
         that.loadAndSort(data);
         localStorage[that.DatasetKey] = JSON.stringify(data);
-        // callback(arguments[1]);
-        callback();
-      });
+      }).done(callback);
     }
   };
 
   Page.prototype.fetchGithub = function (callback) {
     if (localStorage[this.DatasetKey]) {
-      this.loadAndSort(JSON.parse(localStorage[this.DatasetKey]));
-      callback(arguments[1]);
+      this.loadGithub(JSON.parse(localStorage[this.DatasetKey]));
+      callback();
     }
     else {
       var that = this;
       repos.requestRepos(function () {
         var newData = repos.owned();
         newData.forEach(function(data) {
-          that.loadAndSort(data);
+          that.loadGithub(data);
           localStorage[that.DatasetKey] = JSON.stringify(data);
-          callback(arguments[1]);
+          callback();
         });
       });
     }
@@ -93,10 +87,14 @@
   view.populatePage = function () {
     portfolio.fetchAll(function() { view.buildIndexPage(portfolio); });
     recent.fetchGithub(function() { view.buildIndexPage(recent); });
-    repos.requestRepos(repoView.index);
+    repos.requestRepos(repoView.index());
   };
 
   view.populatePage();
+
+  $('#recent').ready(function() {
+    $('#myCarousel').fadeIn(5000);
+  });
 
   module.view = view;
 

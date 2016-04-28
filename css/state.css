@@ -2,6 +2,10 @@
 
 /************************ Default display state ************************/
 
+#myCarousel {
+  display: none;
+}
+
 #recent, #about {
   display: none;
   padding-top: 130px;

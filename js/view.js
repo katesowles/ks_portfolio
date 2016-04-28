@@ -2,9 +2,8 @@
 
   var view = {};
   var portfolio = new Page('PortfolioDataSet', 'portfolio', '.carousel-inner', 'portfolioTemplate');
+
   var recent = new Page('RecentDataSet', 'recent', '#recent', 'recentTemplate');
-
-
 
   function Page (DatasetKey, Filename, location, templateId) {
     this.DatasetKey = DatasetKey;
@@ -17,9 +16,8 @@
 
     // will produce an error when fetchGithub is run...to be fixed
     this.loadAndSort = function(data) {
-      console.log('this', this);
-      console.log('data', data);
-
+      // console.log('this', this);
+      // console.log('data', data);
       data.sort(function(a,b) {
         return (new Date(b.pubDate)) - (new Date(a.pubDate));
       });

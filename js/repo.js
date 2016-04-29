@@ -11,17 +11,19 @@
       type: 'GET',
       success: function (data, message, xhr) { // when info is successfully received, push to repos.all
         repos.all = data;
+        callback();
       }
-    }).done(callback);
+    });
   };
 
   repos.owned = function() { // filters the incoming content and only shows repos that are NOT forks, and that have a description that belong to me
-    return repos.all.filter(function(repo) {
+
+    var x = repos.all.filter(function(repo) {
       if (!repo.fork && repo.description) {
         return repo.owner.login == 'katesowles';
       };
-
     });
+    return x;
   };
 
   module.repos = repos;

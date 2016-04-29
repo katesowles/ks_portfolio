@@ -87,7 +87,7 @@
   view.populatePage = function () {
     portfolio.fetchAll(function() { view.buildIndexPage(portfolio); });
     recent.fetchGithub(function() { view.buildIndexPage(recent); });
-    repos.requestRepos(repoView.index());
+    repos.requestRepos(repoView.index);
   };
 
   view.populatePage();
